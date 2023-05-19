@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@solidjs/router':
+    specifier: ^0.8.2
+    version: 0.8.2(solid-js@1.6.10)
   solid-icons:
     specifier: ^1.0.4
     version: 1.0.4(solid-js@1.6.10)
@@ -609,6 +612,14 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
+
+  /@solidjs/router@0.8.2(solid-js@1.6.10):
+    resolution: {integrity: sha512-gUKW+LZqxtX6y/Aw6JKyy4gQ9E7dLqp513oB9pSYJR1HM5c56Pf7eijzyXX+b3WuXig18Cxqah4tMtF0YGu80w==}
+    peerDependencies:
+      solid-js: ^1.5.3
+    dependencies:
+      solid-js: 1.6.10
+    dev: false
 
   /@tailwindcss/forms@0.5.3(tailwindcss@3.3.2):
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
