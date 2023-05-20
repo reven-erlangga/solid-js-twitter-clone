@@ -176,3 +176,17 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.slide-move {
+  transition: width 2s, height 2s, transform 0.3s ease;
+}
+.slide-enter-active,
+.slide-exit-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter,
+.slide-exit-to {
+  transform: translateX(10px);
+  opacity: 0;
+}

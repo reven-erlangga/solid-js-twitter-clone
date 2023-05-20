@@ -1,3 +1,4 @@
+import { Link } from "@solidjs/router";
 import { Component } from "solid-js";
 
 const RegisterScreen: Component = () => {
@@ -88,9 +89,9 @@ const RegisterScreen: Component = () => {
               </div>
               <div class="text-sm text-gray-600 pb-4">
                 Already Registered?{" "}
-                <a class="hover:underline" href="#">
+                <Link class="hover:underline" href="/login" replace>
                   Go to Login
-                </a>
+                </Link>
               </div>
               <div class="flex-it py-2">
                 <button

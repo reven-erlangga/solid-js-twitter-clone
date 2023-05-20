@@ -19,8 +19,10 @@
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
+    "@motionone/solid": "^10.16.2",
     "@solidjs/router": "^0.8.2",
     "solid-icons": "^1.0.4",
-    "solid-js": "^1.6.10"
+    "solid-js": "^1.6.10",
+    "solid-transition-group": "^0.2.2"
   }
 }

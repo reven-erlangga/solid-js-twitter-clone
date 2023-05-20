@@ -1,3 +1,4 @@
+import { Link } from "@solidjs/router";
 import { Component } from "solid-js";
 
 const LoginScreen: Component = () => {
@@ -39,9 +40,9 @@ const LoginScreen: Component = () => {
               </div>
               <div class="text-sm text-gray-600 pb-4">
                 No Account Yet?{" "}
-                <a class="hover:underline" href="#">
+                <Link class="hover:underline" href="/register" replace>
                   Create a new account
-                </a>
+                </Link>
               </div>
               <div class="flex-it py-2">
                 <button
