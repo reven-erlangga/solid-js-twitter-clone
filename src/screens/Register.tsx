@@ -89,7 +89,7 @@ const RegisterScreen: Component = () => {
               </div>
               <div class="text-sm text-gray-600 pb-4">
                 Already Registered?{" "}
-                <Link class="hover:underline" href="/login" replace>
+                <Link class="hover:underline" href="/auth/login" replace>
                   Go to Login
                 </Link>
               </div>

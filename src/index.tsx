@@ -7,9 +7,11 @@ import AuthProvider from "./context/auth";
 
 render(
   () => (
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </Router>
   ),
   document.getElementById("root")!
 );

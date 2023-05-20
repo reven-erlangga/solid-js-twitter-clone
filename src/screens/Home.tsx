@@ -13,7 +13,6 @@ import MainLayout from "../components/layouts/Main";
 import GlidePost from "../components/glides/GlidePost";
 import { Glide } from "../types/Glide.type";
 import { TransitionGroup } from "solid-transition-group";
-import pageSize from "../reactive/pageSize";
 import { useAuthState } from "../context/auth";
 
 const HelloWorld = () => {
@@ -45,13 +44,8 @@ const HomeScreen: Component = () => {
   const [glides, setGlides] = createSignal<Glide[]>([]);
   const authState = useAuthState()!;
 
-  console.log("Is Authenticated:" + authState.isAuthenticated());
-  console.log("Is Loading:" + authState.loading());
-
-  onMount(() => {
-    authState.setIsAuthenticated(true);
-    authState.setLoading(false);
-  });
+  console.log("Is Authenticated:" + authState.isAuthenticated);
+  console.log("Is Loading:" + authState.loading);
 
   const createGlide = () => {
     const glide = {
@@ -78,7 +72,6 @@ const HomeScreen: Component = () => {
   });
   return (
     <MainLayout>
-      {/* HOME PAGE START */}
       <div class="flex-it py-1 px-4 flex-row">
         <div class="flex-it mr-4">
           <div class="w-12 h-12 overflow-visible cursor-pointer transition duration-200 hover:opacity-80">
@@ -88,7 +81,7 @@ const HomeScreen: Component = () => {
             ></img>
           </div>
         </div>
-        {/* MESSENGER START */}
+
         <div class="flex-it flex-grow">
           <div class="flex-it">
             <textarea
@@ -115,8 +108,8 @@ const HomeScreen: Component = () => {
                 onClick={createGlide}
                 type="button"
                 class="
-                  disabled:cursor-not-allowed disabled:bg-gray-400
-                  bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex-it transition duration-200"
+                disabled:cursor-not-allowed disabled:bg-gray-400
+                bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex-it transition duration-200"
               >
                 <div class="flex-it flex-row text-sm font-bold text-white items-start justify-center">
                   <span>Glide It</span>
@@ -125,12 +118,13 @@ const HomeScreen: Component = () => {
             </div>
           </div>
         </div>
-        {/* MESSENGER END */}
       </div>
-      <div class="h-px bg-gray-700 my-1" />
-      <TransitionGroup name="slide">
-        <For each={glides()}>{(glide) => <GlidePost glide={glide} />}</For>
-      </TransitionGroup>
+
+      <div class="h-px bg-gray-700 my-1">
+        <TransitionGroup name="slide">
+          <For each={glides()}>{(glide) => <GlidePost glide={glide} />}</For>
+        </TransitionGroup>
+      </div>
     </MainLayout>
   );
 };

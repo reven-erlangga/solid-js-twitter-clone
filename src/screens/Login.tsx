@@ -6,8 +6,8 @@ import { useAuthState } from "../context/auth";
 const LoginScreen: Component = () => {
   const authState = useAuthState()!;
 
-  console.log("Is Authenticated:" + authState.isAuthenticated());
-  console.log("Is Loading:" + authState.loading());
+  console.log("Is Authenticated:" + authState.isAuthenticated);
+  console.log("Is Loading:" + authState.loading);
 
   return (
     <div class="flex-it justify-center items-center h-full">
@@ -47,7 +47,7 @@ const LoginScreen: Component = () => {
               </div>
               <div class="text-sm text-gray-600 pb-4">
                 No Account Yet?{" "}
-                <Link class="hover:underline" href="/register" replace>
+                <Link class="hover:underline" href="/auth/register" replace>
                   Create a new account
                 </Link>
               </div>
