@@ -13,6 +13,7 @@ import MainLayout from "../components/layouts/Main";
 import GlidePost from "../components/glides/GlidePost";
 import { Glide } from "../types/Glide.type";
 import { TransitionGroup } from "solid-transition-group";
+import pageSize from "../reactive/pageSize";
 
 const HelloWorld = () => {
   onMount(() => {
@@ -41,6 +42,7 @@ const GoodbyeComponent = () => {
 const HomeScreen: Component = () => {
   const [content, setContent] = createSignal("");
   const [glides, setGlides] = createSignal<Glide[]>([]);
+  const testValue = pageSize;
 
   const createGlide = () => {
     const glide = {

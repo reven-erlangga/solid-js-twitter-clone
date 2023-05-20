@@ -1,15 +1,27 @@
-import { createRoot, onCleanup, onMount } from "solid-js";
+import { createRoot, createSignal, onCleanup, onMount } from "solid-js";
+
+const getClientSize = () => ({
+  height: document.body.clientHeight,
+  width: document.body.clientWidth,
+});
 
 const pageSize = () => {
+  const [value, setValue] = createSignal(getClientSize());
+
   onMount(() => {
-    console.log("pageSize onMount");
+    console.log("INITIALIZING PAGESIZE!!!!!!");
+    window.addEventListener("resize", handleResize);
   });
 
-  onCleanup(() => {
-    console.log("pageSize onCleanup");
-  });
+  const handleResize = () => {
+    setValue(getClientSize());
+    console.log(value());
+  };
 
-  return 100;
+  const isXl = () => value().width > 1280;
+  const isLg = () => value().width > 1024;
+
+  return { isXl, isLg, value };
 };
 
 export default createRoot(pageSize);
