@@ -3,12 +3,13 @@ import App from "./App";
 
 import "./index.css";
 import { Router } from "@solidjs/router";
+import AuthProvider from "./context/auth";
 
 render(
   () => (
-    <Router>
+    <AuthProvider>
       <App />
-    </Router>
+    </AuthProvider>
   ),
   document.getElementById("root")!
 );
